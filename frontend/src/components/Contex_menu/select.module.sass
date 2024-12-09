@@ -1,0 +1,78 @@
+.container 
+    position: relative
+    display: inline-block
+    width: 140px
+    font-family: inherit
+    font-size: .875em
+    font-weight: 500
+    line-height: 1.25em
+
+.toggle 
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+    height: 36px
+    padding: 4px 8px
+    border-radius: 6px
+    background-color: #09090b
+    color: #838287
+    border: 1px solid transparent
+    cursor: pointer
+    box-shadow: 0 0 0 0.3px rgba(245, 245, 247, 0.5)
+
+    &:focus 
+        border: 1px solid #f5f5f7
+    
+.dropdownMenu 
+    position: absolute
+    top: calc(100% + 8px)
+    left: 0
+    width: 100%
+    margin: 0
+    padding: 0px
+    list-style: none
+    background-color: #09090b
+    border-radius: 4px
+    color: #f5f5f7
+    z-index: 1000
+    box-shadow: 0 0 0 0.3px rgba(245, 245, 247, 0.5)
+    animation: fadeIn 0.2s ease
+
+    .dropdownMenuItem 
+        display: flex
+        align-items: center
+        justify-content: space-between
+        height: 36px
+        padding: 0px 8px
+        cursor: pointer
+        
+        &:first-child 
+            border-top-left-radius: 4px
+            border-top-right-radius: 4px
+        
+        
+        &:last-child 
+            border-bottom-left-radius: 4px
+            border-bottom-right-radius: 4px
+        
+        
+        &:hover 
+            background-color: #ebebeb10
+        
+        
+        &.selected 
+            background-color: #ffffff1c
+        
+.fadeIn 
+    animation: fadeIn 0.2s ease
+
+@keyframes fadeIn 
+    from 
+        opacity: 0
+        transform: translateY(-5px)
+    
+    to
+        opacity: 1
+        transform: translateY(0)
+    

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend/build:/usr/share/nginx/html
+    environment:
+      - NGINX_HOST=trackmateplus.ru
+      - NGINX_PORT=80
