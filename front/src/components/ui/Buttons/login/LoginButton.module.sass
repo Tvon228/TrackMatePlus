@@ -1,0 +1,68 @@
+.buttons
+    display: flex
+    gap: 10px
+    flex-direction: column
+
+.button_login
+    border-radius: 6px
+    font-size: .875em
+    line-height: 1.25em
+    height: 33px
+    cursor: pointer
+    border: none
+
+    &:hover
+        background-color: #ffffffe1
+
+.button_GitHub
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 5px
+    background-color: #09090b
+    font-size: .875em
+    color: #f5f5f7
+    border: none
+    border-radius: 6px
+    height: 33px
+    cursor: pointer
+    box-shadow: 0 0 0 0.3px rgba(245, 245, 247, 0.5)
+
+    &:hover
+        background-color: #ffffff0e
+
+.divider
+    display: flex
+    align-items: center
+    text-align: center
+    text-transform: uppercase
+    padding: 5px 0px
+
+    &::before,
+    &::after
+        width: 100%
+        content: ""
+        flex: 1
+        border-top: 1px solid #ccc
+        margin: 0 10px
+
+    span
+        white-space: nowrap
+        color: #838287
+        font-size: .775rem
+
+.sign_up
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 5px
+    padding: 7px 0px
+
+    span
+        color: #838287
+        font-size: .875rem
+
+    a
+        font-size: 0.775em
+        cursor: pointer
+        text-decoration: underline
