@@ -1,11 +1,11 @@
 $primary-bg: #09090b
-$text-color: #f5f5f7
+$text-color: #f5f5f7e5
 $secondary-text: #838287
 $hover-bg: #ffffff0e
 $button-hover: #ffffffe1
 
 body
-    font-family: 'GeistSans', sans-serif
+    font-family: 'Roboto', serif
     box-sizing: border-box
     margin: 0
     height: 100vh
@@ -22,7 +22,7 @@ body
     left: 50%
     transform: translate(-50%, -50%)
     width: 355px
-    border-radius: 8px
+
 
 .content
     width: 100%
@@ -33,8 +33,8 @@ body
     display: flex
     flex-direction: column
     align-items: center
-    gap: 6px
-    padding: 24px
+    gap: 10px
+    padding: 25px
 
 .text_header
     letter-spacing: -0.025em
@@ -43,8 +43,10 @@ body
     font-weight: 600
 
 .text_info
+    display: flex
+    text-align: center
     line-height: 1.25rem
-    font-size: 0.775rem
+    font-size: 0.8rem
     color: $secondary-text
 
 .main
@@ -52,6 +54,41 @@ body
     flex-direction: column
     padding: 0 24px 24px
     gap: 1rem
+
+.under_text
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 10px
+    padding: 30px 0px
+
+.link
+    font-size: .8rem
+    color: #f5f5f7
+    cursor: pointer
+
+    &:visited
+        color: inherit
+
+    &:active
+        color: #838287
+
+.sign_up
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 5px
+    padding: 7px 0px
+
+    span
+        color: #838287
+        font-size: .875rem
+
+    a
+        font-size: 0.775em
+        cursor: pointer
+        text-decoration: underline
 
 
 

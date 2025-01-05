@@ -1,21 +1,27 @@
-import classes from "./login.module.sass"
-
-import { createSignal, onMount } from "solid-js"
+import classes from "./CreateAccount.module.sass"
 
 import AnimationContainer, {
 	AnimatedPosition,
 } from "../../../components/AnimationContainer"
-import LoginButton from "../../../components/ui/Buttons/login/LoginButton"
-import LoginInput from "../../../components/ui/Inputs/login/LoginInput"
+import CreateAccInputs from "../../../components/ui/Inputs/createAccount/CreateAccount"
+import CreateAccButton from "../../../components/ui/Buttons/createAccount/CreateAccount"
 
-export default function Login() {
+import { useNavigate } from "@solidjs/router"
+import { createSignal, onMount } from "solid-js"
+import ArrowLeft from "lucide-solid/icons/arrow-left"
+
+export default function CreateAccount() {
+	const navigate = useNavigate()
+
+	const handleBack = () => {
+		navigate(-1)
+	}
 	const [animatedPosition, setAnimatedPosition] = createSignal({
 		content: AnimatedPosition.LEFT,
 		header: AnimatedPosition.BOTTOM,
 		subheader: AnimatedPosition.BOTTOM,
 		input: AnimatedPosition.BOTTOM,
 		button: AnimatedPosition.BOTTOM,
-		under_text: AnimatedPosition.BOTTOM,
 	})
 
 	onMount(() => {
@@ -39,12 +45,6 @@ export default function Login() {
 							...animatedPosition(),
 							button: AnimatedPosition.VISIBLE,
 						})
-						setTimeout(() => {
-							setAnimatedPosition({
-								...animatedPosition(),
-								under_text: AnimatedPosition.VISIBLE,
-							})
-						}, 200)
 					}, 200)
 				})
 			}, 200)
@@ -56,38 +56,32 @@ export default function Login() {
 			<div class={classes.content}>
 				<div class={classes.text}>
 					<AnimationContainer position={animatedPosition().header}>
-						<span class={classes.text_header}>Welcome</span>
+						<span class={classes.header}>
+							<ArrowLeft
+								onClick={handleBack}
+								class={classes.icon}
+								size={22}
+							/>
+							<span class={classes.text_header}>
+								Create account
+							</span>
+						</span>
 					</AnimationContainer>
 					<AnimationContainer position={animatedPosition().subheader}>
-						<span class={classes.text_info}>
-							Enter your email and password below to login to your account
+						<span class={classes.subheader}>
+							Enter your email and password below to create your
+							account
 						</span>
 					</AnimationContainer>
 				</div>
 				<AnimationContainer position={animatedPosition().input}>
 					<div class={classes.main}>
-						<LoginInput />
+						<CreateAccInputs />
 
 						<AnimationContainer
 							position={animatedPosition().button}
 						>
-							<LoginButton />
-							<AnimationContainer
-								position={animatedPosition().under_text}
-							>
-								<div class={classes.under_text}>
-									<a
-										class={classes.link}
-										href="/user/forgot_password"
-									>
-										Forgot your password?
-									</a>
-									<div class={classes.sign_up}>
-										<span>Don't have an account?</span>
-										<a class={classes.link} href="/user/create_account">Create account</a>
-									</div>
-								</div>
-							</AnimationContainer>
+							<CreateAccButton />
 						</AnimationContainer>
 					</div>
 				</AnimationContainer>

@@ -2,13 +2,15 @@ import classes from "./loginInput.module.sass"
 
 import { createSignal } from "solid-js"
 
-import { Eye, EyeOff } from "lucide-solid"
+import Eye from "lucide-solid/icons/eye"
+import EyeOff from "lucide-solid/icons/eye-off"
+import Mail from "lucide-solid/icons/mail"
 
 export default function LoginInput() {
-    const [password, setPassword] = createSignal("")
-    const [ viewPass, setViewPass ] = createSignal(false)
+	const [password, setPassword] = createSignal("")
+	const [viewPass, setViewPass] = createSignal(false)
 
-    const togglePasswordVisibility = () => {
+	const togglePasswordVisibility = () => {
 		setViewPass(!viewPass())
 	}
 
@@ -16,20 +18,26 @@ export default function LoginInput() {
 		<>
 			<div class={classes.content}>
 				<span class={classes.text}>E-mail:</span>
-				<input
-					class={classes.input}
-					type="email"
-					placeholder="m@example.com"
-				/>
+				<div class={classes.mail}>
+					<input
+						class={classes.input}
+						type="email"
+						placeholder="m@example.com"
+					/>
+					<Mail
+						size={18}
+						color="#838287"
+						class={classes.icon}
+						style={{ cursor: "default" }}
+					/>
+				</div>
 			</div>
 			<div class={classes.content}>
-				<div class={classes.password_header}>
-					<span class={classes.text}>Password:</span>
-					<a class={classes.text_forgot} href="/user/sign_up">Forgot your password?</a>
-				</div>
+				<span class={classes.text}>Password:</span>
 				<div class={classes.password_input}>
 					<input
 						class={classes.input}
+						placeholder="Your Password"
 						type={viewPass() ? "text" : "password"}
 						value={password()}
 						onInput={(e) => setPassword(e.target.value)}

@@ -1,24 +1,17 @@
 import classes from "./loginButton.module.sass"
 
-import { Github } from "lucide-solid"
+import Chrome from "lucide-solid/icons/chrome"
 
 export default function LoginButton() {
-    return (
+	return (
 		<div class={classes.buttons}>
 			<button class={classes.button_login}>Login</button>
-			<div class={classes.divider}>
-				<span>or continue with</span>
-			</div>
-			<button class={classes.button_GitHub}>
-				<Github size={16} />
-				<span>GitHub</span>
+			<button class={classes.button_Chrome}>
+				<Chrome size={16} />
+				<span>Continue with Google</span>
 			</button>
-			<div class={classes.sign_up}>
-				<span>Don't have an account?</span>
-				<a>
-					Sign up
-				</a>
-			</div>
+
+			
 		</div>
 	)
 }
