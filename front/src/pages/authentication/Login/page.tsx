@@ -17,7 +17,6 @@ export default function Login() {
 		button: AnimatedPosition.BOTTOM,
 		under_text: AnimatedPosition.BOTTOM,
 	})
-
 	onMount(() => {
 		setTimeout(() => {
 			setAnimatedPosition({
@@ -58,9 +57,11 @@ export default function Login() {
 					<AnimationContainer position={animatedPosition().header}>
 						<span class={classes.text_header}>Welcome</span>
 					</AnimationContainer>
+					
 					<AnimationContainer position={animatedPosition().subheader}>
 						<span class={classes.text_info}>
-							Enter your email and password below to login to your account
+							Enter your email and password below to login to your
+							account
 						</span>
 					</AnimationContainer>
 				</div>
@@ -84,7 +85,12 @@ export default function Login() {
 									</a>
 									<div class={classes.sign_up}>
 										<span>Don't have an account?</span>
-										<a class={classes.link} href="/user/create_account">Create account</a>
+										<a
+											class={classes.link}
+											href="/user/create_account"
+										>
+											Create account
+										</a>
 									</div>
 								</div>
 							</AnimationContainer>

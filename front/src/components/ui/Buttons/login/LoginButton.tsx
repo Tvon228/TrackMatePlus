@@ -10,8 +10,6 @@ export default function LoginButton() {
 				<Chrome size={16} />
 				<span>Continue with Google</span>
 			</button>
-
-			
 		</div>
 	)
 }
