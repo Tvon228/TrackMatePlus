@@ -5,8 +5,8 @@ import { createSignal, onMount } from "solid-js"
 import AnimationContainer, {
 	AnimatedPosition,
 } from "../../../components/AnimationContainer"
-import LoginButton from "../../../components/ui/Buttons/login/LoginButton"
-import LoginInput from "../../../components/ui/Inputs/login/LoginInput"
+import LoginButton from "../../../components/ui/Buttons/login"
+import LoginInput from "../../../components/ui/Inputs/login"
 
 export default function Login() {
 	const [animatedPosition, setAnimatedPosition] = createSignal({

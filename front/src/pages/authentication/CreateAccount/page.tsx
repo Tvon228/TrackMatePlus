@@ -3,8 +3,8 @@ import classes from "./CreateAccount.module.sass"
 import AnimationContainer, {
 	AnimatedPosition,
 } from "../../../components/AnimationContainer"
-import CreateAccInputs from "../../../components/ui/Inputs/createAccount/CreateAccount"
-import CreateAccButton from "../../../components/ui/Buttons/createAccount/CreateAccount"
+import CreateAccInputs from "../../../components/ui/Inputs/createAccount"
+import CreateAccButton from "../../../components/ui/Buttons/createAccount"
 
 import { useNavigate } from "@solidjs/router"
 import { createSignal, onMount } from "solid-js"

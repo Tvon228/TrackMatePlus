@@ -1,12 +1,16 @@
 .content
-    display: block
+    position: fixed
     top: 0,
     left: 0,
-    width: 15%
+    width: 16rem
     height: 100vh
     background: #1e293b8a
     color: #f1f5f9
-    transition: transform 0.3s ease-in-out
+    transform: translateX(-16rem) 
+    transition: transform .3s ease-in-out
+
+    &.menu_open
+        transform: translateX(0) 
 
 .header
     display: flex
@@ -94,3 +98,19 @@
 
     &:hover
         background-color: #ffffff1a
+
+.icon
+    position: fixed
+    cursor: pointer
+    border-radius: 4px
+    padding: 3px 3px
+    left: calc(15rem - 1rem)
+    left: 2rem
+    top: 1.9rem
+    transition: all .25s ease-in-out
+
+    &.menu_open
+        left: 17rem
+
+    &:hover
+        background-color: #f9fafb31

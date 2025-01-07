@@ -3,8 +3,8 @@ import classes from "./ForgotPass.module.sass"
 import AnimationContainer, {
 	AnimatedPosition,
 } from "../../../components/AnimationContainer"
-import ForgotPassButton from "../../../components/ui/Buttons/forgotPass/ForgotPassButton"
-import ForgotPassInput from "../../../components/ui/Inputs/forgotPass/ForgotPassInput"
+import ForgotPassButton from "../../../components/ui/Buttons/forgotPass"
+import ForgotPassInput from "../../../components/ui/Inputs/forgotPass"
 
 import { useNavigate } from "@solidjs/router"
 import { createSignal, onMount } from "solid-js"
