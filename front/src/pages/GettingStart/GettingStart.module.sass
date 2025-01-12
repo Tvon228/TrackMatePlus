@@ -1,7 +1,7 @@
 .container
     display: flex
 
-.content 
+.content
     position: relative
     width: 100%
 
@@ -9,7 +9,7 @@
     display: flex
     align-items: center
 
-.menu 
+.menu
     display: flex
 
 .authentication
@@ -57,34 +57,38 @@
 
 .main
     display: flex
-    padding: 13rem 5rem
+    justify-content: center
+    padding-top: 10rem
+    padding-left: 17rem
     width: 100%
-    max-width: 50rem
-    margin-left: auto
-    margin-right: auto
+    max-width: 45rem
+    margin: auto
     flex-direction: column
 
 .text
-    display: flex
-    align-items: center
-    padding-top: .25rem
-    padding-bottom: .25rem
-    padding-left: 1rem
-    padding-right: 1rem
-    min-height: 1.5em
-    margin-top: .75rem
+    width: 100%
+    word-break: break-word
+    min-height: 2.5rem
+    padding: .25rem 1rem
     margin-bottom: .75rem
-    border-radius: .2rem
+    background-color: transparent
+    font-family: inherit
+    color: #ffffff
+    outline: none
+    border: none
 
-    &:active
-        background-color: #f9fafb1c
-        box-shadow: 0 0 0 1px rgba(245, 245, 247, 0.171)
+    &:empty::before
+        content: attr(data-placeholder)
+        color: #83828780
+        pointer-events: none
 
 .header_text
-    font-size: 2.25rem
-    line-height: 2.5rem
+    font-size: 2.5rem
+    line-height: 2rem
     font-weight: 700
+    position: relative
+
 
 .subheader_text
-    font-size: 1rem
+    font-size: 1.1rem
     line-height: 1.5rem

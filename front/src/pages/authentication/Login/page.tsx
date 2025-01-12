@@ -1,14 +1,22 @@
 import classes from "./login.module.sass"
 
 import { createSignal, onMount } from "solid-js"
+import { useNavigate } from "@solidjs/router"
 
 import AnimationContainer, {
 	AnimatedPosition,
 } from "../../../components/AnimationContainer"
 import LoginButton from "../../../components/ui/Buttons/login"
 import LoginInput from "../../../components/ui/Inputs/login"
+import ArrowLeft from "lucide-solid/icons/arrow-left"
 
 export default function Login() {
+	const navigate = useNavigate()
+
+	const handleBack = () => {
+		navigate(-1)
+	}
+
 	const [animatedPosition, setAnimatedPosition] = createSignal({
 		content: AnimatedPosition.LEFT,
 		header: AnimatedPosition.BOTTOM,
@@ -55,9 +63,15 @@ export default function Login() {
 			<div class={classes.content}>
 				<div class={classes.text}>
 					<AnimationContainer position={animatedPosition().header}>
-						<span class={classes.text_header}>Welcome</span>
+						<div class={classes.header}>
+							<ArrowLeft
+								onClick={handleBack}
+								class={classes.icon}
+								size={22}
+							/>
+							<span class={classes.text_header}>Welcome</span>
+						</div>
 					</AnimationContainer>
-					
 					<AnimationContainer position={animatedPosition().subheader}>
 						<span class={classes.text_info}>
 							Enter your email and password below to login to your
@@ -65,6 +79,7 @@ export default function Login() {
 						</span>
 					</AnimationContainer>
 				</div>
+
 				<AnimationContainer position={animatedPosition().input}>
 					<div class={classes.main}>
 						<LoginInput />
