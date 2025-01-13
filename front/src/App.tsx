@@ -2,7 +2,7 @@ import type { Component } from "solid-js"
 
 import { Router, Route } from "@solidjs/router"
 
-import GettingStart from "./pages/GettingStart/page"
+import GettingStart from "./pages/gettingStart/page"
 import Login from "./pages/authentication/Login/page"
 import ForgotPass from "./pages/authentication/ForgotPass/page"
 import CreateAccount from "./pages/authentication/CreateAccount/page"

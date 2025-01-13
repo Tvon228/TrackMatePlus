@@ -20,6 +20,23 @@ export default function Menu() {
 		setMenuOpen(!isMenuOpen())
 	}
 
+	const mainMenu = [
+		{ icon: Search, label: "Search" },
+		{ icon: House, label: "Home" },
+		{ icon: Calendar, label: "Calendar" },
+		{ icon: Inbox, label: "Inbox" },
+	]
+
+	const subMenu = [
+		{ icon: File, label: "Getting Started" },
+		{ icon: File, label: "Project Ideas" },
+	]
+
+	const options = [
+		{ icon: Settings, label: "Settings" },
+		{ icon: Help, label: "Help" },
+	]
+
 	return (
 		<>
 			<PanelLeft
@@ -36,57 +53,44 @@ export default function Menu() {
 					[classes.menu_open]: isMenuOpen(),
 				}}
 			>
-				<div class={classes.header}>
-					<button class={classes.btn_acc}>
-						<User size={20} style={{ color: "#f1f5f9" }} />
-						Your account
-					</button>
-					<div class={classes.btns_main}>
-						<button class={classes.items}>
-							<Search size={20} />
-							Search
+				<div class={classes.main}>
+					<div class={classes.header}>
+						<button class={classes.btn_acc}>
+							<User size={20} style={{ color: "#f1f5f9" }} />
+							Your account
 						</button>
-						<button class={classes.items}>
-							<House size={20} />
-							Home
-						</button>
-						<button class={classes.items}>
-							<Calendar size={20} />
-							Calendar
-						</button>
-						<button class={classes.items}>
-							<Inbox size={20} />
-							Calendar
-						</button>
+						<div class={classes.btns_main}>
+							{mainMenu.map((items) => (
+								<button class={classes.items}>
+									<items.icon size={20} />
+									{items.label}
+								</button>
+							))}
+						</div>
 					</div>
-				</div>
-				<div class={classes.submain}>
-					<div class={classes.pages_control}>
-						<span class={classes.title}>Pages</span>
-						<button class={classes.btn_np}>
-							<Plus size={16} style={{ color: "#f1f5f9" }} />
-							New page
-						</button>
-					</div>
+					<div class={classes.submain}>
+						<div class={classes.pages_control}>
+							<span class={classes.title}>Pages</span>
+							<button class={classes.btn_np}>
+								<Plus size={16} style={{ color: "#f1f5f9" }} />
+							</button>
+						</div>
 
-					<button class={classes.items}>
-						<File size={20} />
-						Getting Started
-					</button>
-					<button class={classes.items}>
-						<File size={20} />
-						Project Ideas
-					</button>
+						{subMenu.map((items) => (
+							<button class={classes.items}>
+								<items.icon size={20} />
+								{items.label}
+							</button>
+						))}
+					</div>
 				</div>
 				<div class={classes.options}>
-					<button class={classes.items}>
-						<Settings size={20} />
-						Settings
-					</button>
-					<button class={classes.items}>
-						<Help size={20} />
-						Help
-					</button>
+					{options.map((items) => (
+						<button class={classes.items}>
+							<items.icon size={20} />
+							{items.label}
+						</button>
+					))}
 				</div>
 			</div>
 		</>

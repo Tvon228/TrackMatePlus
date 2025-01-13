@@ -1,12 +1,14 @@
 .content
     position: fixed
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     top: 0,
     left: 0,
     width: 16rem
     height: 100vh
     display: flex
     flex-direction: column
-    gap: 3rem
     background: #182132
     color: #f1f5f9
     transform: translateX(-16rem)
@@ -47,17 +49,11 @@
 .btn_np
     display: flex
     align-items: center
-    justify-content: center
-    gap: .2rem
-    font-family: inherit
-    padding: .2rem .3rem
-    font-size: .82rem
-    font-weight: 600
+    padding: .25rem
     border-radius: .3rem
     border: 1px solid rgba(245, 245, 247, 0.171)
     background-color: #02081759
     cursor: pointer
-    color: #f1f5f9
 
     &:hover
         background-color: #ffffff1a
@@ -116,4 +112,4 @@
         background-color: #f9fafb31
 
 .options
-    padding: 0 1rem
+    padding: 1.6rem 1rem

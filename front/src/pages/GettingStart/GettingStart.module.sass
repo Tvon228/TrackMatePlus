@@ -61,16 +61,15 @@
     padding-top: 10rem
     padding-left: 17rem
     width: 100%
-    max-width: 45rem
+    max-width: 48rem
     margin: auto
     flex-direction: column
 
 .text
     width: 100%
     word-break: break-word
-    min-height: 2.5rem
     padding: .25rem 1rem
-    margin-bottom: .75rem
+    margin: .75rem 0
     background-color: transparent
     font-family: inherit
     color: #ffffff
@@ -83,12 +82,50 @@
         pointer-events: none
 
 .header_text
-    font-size: 2.5rem
-    line-height: 2rem
+    font-size: 2.25rem
+    min-height: 2.5rem
+    line-height: 2.5rem
     font-weight: 700
     position: relative
-
 
 .subheader_text
     font-size: 1.1rem
     line-height: 1.5rem
+
+.checkbox_main
+    display: flex
+    align-items: center
+    justify-content: center
+    padding-left: .75rem
+    font-size: 1.1rem
+
+.checkbox_finish
+    text-decoration: line-through
+    color: gray
+
+.addBlock_btn
+    display: flex
+    align-items: center
+    margin-top: 2rem
+    padding: .3rem .7rem
+    height: 1.7rem
+    width: 5.6rem
+    border-radius: .3rem
+    gap: .5rem
+    cursor: pointer
+    transition: 150ms ease
+
+    &:hover
+        background-color: #ffffff1a
+
+.addBlock_text
+    font-family: inherit
+    font-weight: 600
+    font-size: .875rem
+    line-height: 1.25rem
+
+.tvon
+    position: fixed
+    bottom: 20px
+    right: 20px
+
