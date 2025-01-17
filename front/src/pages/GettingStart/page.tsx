@@ -33,7 +33,6 @@ export default function GettingStart() {
 		<div class={classes.container}>
 			<div class={classes.content}>
 				<div class={classes.header}>
-					<Menu />
 					<div class={classes.authentication}>
 						<a
 							class={`${classes.btn} ${classes.btnLogin} `}

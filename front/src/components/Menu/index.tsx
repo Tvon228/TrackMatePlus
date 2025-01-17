@@ -1,6 +1,7 @@
 import classes from "./Menu.module.sass"
 
 import { createSignal } from "solid-js"
+import { useNavigate } from "@solidjs/router"
 
 import Plus from "lucide-solid/icons/plus"
 import User from "lucide-solid/icons/user"
@@ -13,18 +14,37 @@ import Inbox from "lucide-solid/icons/inbox"
 import Settings from "lucide-solid/icons/settings"
 import Help from "lucide-solid/icons/circle-help"
 
+import ModalSettings from "../ModalSettings"
+
 export default function Menu() {
 	const [isMenuOpen, setMenuOpen] = createSignal(true)
+	const [isModalOpen, setModalOpen] = createSignal(false)
+	const [active, setActive] = createSignal("/")
+
+	const navigate = useNavigate()
+
+	const handleNavigation = (href: string) => {
+		setActive(href)
+		navigate(href)
+	}
+
+	const openModal = () => {
+		setModalOpen(true)
+	}
+
+	const closeModal = () => {
+		setModalOpen(false)
+	}
 
 	const toggleMenu = () => {
 		setMenuOpen(!isMenuOpen())
 	}
 
 	const mainMenu = [
-		{ icon: Search, label: "Search" },
-		{ icon: House, label: "Home" },
-		{ icon: Calendar, label: "Calendar" },
-		{ icon: Inbox, label: "Inbox" },
+		{ icon: Search, label: "Search", path: "/Home" },
+		{ icon: House, label: "Home", path: "/Home" },
+		{ icon: Calendar, label: "Calendar", path: "/Home" },
+		{ icon: Inbox, label: "Inbox", path: "/Home" },
 	]
 
 	const subMenu = [
@@ -33,7 +53,7 @@ export default function Menu() {
 	]
 
 	const options = [
-		{ icon: Settings, label: "Settings" },
+		{ icon: Settings, label: "Settings", action: openModal },
 		{ icon: Help, label: "Help" },
 	]
 
@@ -60,14 +80,26 @@ export default function Menu() {
 							Your account
 						</button>
 						<div class={classes.btns_main}>
-							{mainMenu.map((items) => (
-								<button class={classes.items}>
-									<items.icon size={20} />
-									{items.label}
-								</button>
-							))}
+							<div class={classes.with_panel}>
+								{mainMenu.map((items) => (
+									<button
+										classList={{
+											[classes.items]: true,
+											[classes.active]:
+												active() === items.path,
+										}}
+										onClick={() => {
+											handleNavigation(items.path)
+										}}
+									>
+										<items.icon size={20} />
+										{items.label}
+									</button>
+								))}
+							</div>
 						</div>
 					</div>
+
 					<div class={classes.submain}>
 						<div class={classes.pages_control}>
 							<span class={classes.title}>Pages</span>
@@ -86,13 +118,17 @@ export default function Menu() {
 				</div>
 				<div class={classes.options}>
 					{options.map((items) => (
-						<button class={classes.items}>
+						<button
+							class={classes.items}
+							onClick={items.action || (() => {})}
+						>
 							<items.icon size={20} />
 							{items.label}
 						</button>
 					))}
 				</div>
 			</div>
+			{isModalOpen() && <ModalSettings onClose={closeModal} />}
 		</>
 	)
 }
