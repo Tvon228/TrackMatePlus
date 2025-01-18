@@ -29,6 +29,9 @@ export default function Menu() {
 
 	const toggleMenu = () => {
 		setMenuOpen(!isMenuOpen())
+		if (isSearchOpen()) {
+			setSearchOpen(false) // Закрываем поиск, если оно открыто
+		}
 	}
 
 	const openModal = () => {
@@ -37,6 +40,9 @@ export default function Menu() {
 
 	const closeModal = () => {
 		setModalOpen(false)
+		if (isSearchOpen()) {
+			setSearchOpen(false) // Закрываем поиск, если оно открыто
+		}
 	}
 
 	const handleNavigation = (href: string) => {
