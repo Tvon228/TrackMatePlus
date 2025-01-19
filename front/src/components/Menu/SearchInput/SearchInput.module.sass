@@ -1,0 +1,47 @@
+.searchWrapper
+    display: flex
+    align-items: center
+    position: relative
+
+.search
+    position: absolute
+    display: flex
+    align-items: center
+    top: 4.85rem
+    left: 14.5rem
+    border-radius: .3rem
+    opacity: 0
+    pointer-events: none
+    transform: translateX(-20%)
+    transition: all .3s ease-in-out
+
+    &.searchOpen
+        pointer-events: all
+        opacity: 1
+        transform: translateX(20%)
+
+.searchInput
+    font-family: inherit
+    background-color: #182132
+    color: #ffffff
+    border: 1px solid rgba(245, 245, 247, 0.13)
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.137)
+    border-radius: .2rem
+    height: 2rem
+    width: 11rem
+    font-size: .95rem
+    padding: .2rem 1rem
+    outline: none
+
+.clearBtn
+    position: absolute
+    right: 0.5rem
+    background: none
+    border: none
+    font-size: 1.2rem
+    cursor: pointer
+    color: #555
+    transition: color 0.2s ease
+
+    &:hover
+        color: #ffffff
