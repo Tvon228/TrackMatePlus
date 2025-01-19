@@ -9,6 +9,7 @@ type MainMenuProps = {
 	active: string
 	onNavigate: (path: string) => void
 	onToggleSearch: () => void
+	onToggleInbox: () => void
 }
 
 export default function MainMenu(props: MainMenuProps) {
@@ -31,6 +32,8 @@ export default function MainMenu(props: MainMenuProps) {
 								onClick={() => {
 									if (item.label === "Search") {
 										props.onToggleSearch()
+									} else if (item.label === "Inbox") {
+										props.onToggleInbox()
 									} else {
 										props.onNavigate(item.path)
 									}

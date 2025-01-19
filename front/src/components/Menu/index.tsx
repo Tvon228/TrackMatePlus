@@ -10,11 +10,13 @@ import MainMenu from "./MainMenu"
 import SubMenu from "./SubMainMenu"
 import OptionsMenu from "./OptionsMenu"
 import SearchInput from "./SearchInput"
+import Inbox from "./Inbox"
 
 export default function Menu() {
 	const [isMenuOpen, setMenuOpen] = createSignal(true)
 	const [isModalOpen, setModalOpen] = createSignal(false)
 	const [isSearchOpen, setSearchOpen] = createSignal(false)
+	const [isInboxOpen, setInboxOpen] = createSignal(false)
 	const [active, setActive] = createSignal("/")
 	const [searchText, setSearchText] = createSignal("")
 
@@ -22,12 +24,24 @@ export default function Menu() {
 
 	const toggleSearch = () => {
 		setSearchOpen(!isSearchOpen())
+		if (isInboxOpen()) {
+			setInboxOpen(false) 
+		}
+	}
+
+	const toggleInbox = () => {
+		setInboxOpen(!isInboxOpen())
+		if (isSearchOpen()) {
+			setSearchOpen(false)
+		}
 	}
 
 	const toggleMenu = () => {
 		setMenuOpen(!isMenuOpen())
 		if (isSearchOpen()) {
-			setSearchOpen(false) 
+			setSearchOpen(false)
+		} else if (isInboxOpen()) {
+			setInboxOpen(false)
 		}
 	}
 
@@ -38,7 +52,7 @@ export default function Menu() {
 	const closeModal = () => {
 		setModalOpen(false)
 		if (isSearchOpen()) {
-			setSearchOpen(false) 
+			setSearchOpen(false)
 		}
 	}
 
@@ -68,13 +82,15 @@ export default function Menu() {
 						active={active()}
 						onNavigate={handleNavigation}
 						onToggleSearch={toggleSearch}
+						onToggleInbox={toggleInbox}
 					/>
 					<SearchInput
 						searchText={searchText()}
 						onSearchChange={setSearchText}
 						onClear={() => setSearchText("")}
-						isOpen={isSearchOpen()}
+						isSearchOpen={isSearchOpen()}
 					/>
+					<Inbox isInboxOpen={isInboxOpen()} />
 					<SubMenu />
 				</div>
 				<OptionsMenu openModal={openModal} />

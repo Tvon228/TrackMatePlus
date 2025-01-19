@@ -1,24 +1,18 @@
 import classes from "./SearchInput.module.sass"
 
-import { createEffect } from "solid-js"
-
 interface SearchInputProps {
 	searchText: string
 	onSearchChange: (value: string) => void
 	onClear: () => void
-	isOpen: boolean
+	isSearchOpen: boolean
 }
 
 export default function SearchInput(props: SearchInputProps) {
-	createEffect(() => {
-		console.log("isOpen changed to:", props.isOpen)
-	})
-
 	return (
 		<div
 			classList={{
 				[classes.search]: true,
-				[classes.searchOpen]: props.isOpen,
+				[classes.searchOpen]: props.isSearchOpen,
 			}}
 		>
 			<div class={classes.searchWrapper}>
