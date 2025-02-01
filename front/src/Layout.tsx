@@ -1,5 +1,5 @@
-import GettingStart from "./pages/gettingStart/page"
 import Menu from "./components/Menu"
+import GettingStart from "./pages/gettingStart/Page"
 
 export default function Layout() {
 
