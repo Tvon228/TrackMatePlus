@@ -1,0 +1,43 @@
+.content
+    display: flex
+    flex-direction: column
+    width: 40rem
+
+.header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: .76rem 1.2rem
+    border-bottom: 1px solid var(--border-color)
+    background-color: var(--menu-bg)
+    flex-shrink: 0
+
+.headerControl
+    display: flex
+    gap: .5rem
+
+.items
+    display: flex
+    align-items: center
+    padding: .5rem
+    cursor: pointer
+    border-radius: .3rem
+    background-color: #ffffff00
+    transition: all 0.1s ease
+
+    &:hover
+        background-color: var(--bg-items-hover)
+
+.notChoiceChat
+    display: flex
+    height: 42rem
+    align-items: center
+    justify-content: center
+
+.notChoiceText
+    font-family: inherit
+    font-size: .785rem
+    font-weight: 600
+    padding: .2rem .7rem
+    border-radius: 1rem
+    background-color: var(--hover-bg)

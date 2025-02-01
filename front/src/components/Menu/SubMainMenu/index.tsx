@@ -11,7 +11,7 @@ export default function SubMenu() {
 			<div class={classes.pagesControl}>
 				<span class={classes.title}>Pages</span>
 				<button class={classes.btnNewPage}>
-					<Plus size={16} style={{ color: "#f1f5f9" }} />
+					<Plus size={16} style={{ color: "var(--icon-color)" }} />
 				</button>
 			</div>
 			<For each={subMenu}>

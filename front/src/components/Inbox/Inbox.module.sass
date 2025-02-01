@@ -1,0 +1,42 @@
+.container
+    position: fixed
+    display: flex
+    justify-content: center
+    align-items: center
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    background-color: rgba(0, 0, 0, 0.377)
+    backdrop-filter: blur(.05rem)
+    z-index: 1
+    opacity: 0
+    transition: opacity 300ms ease
+
+.containerOpen
+    opacity: 1
+
+.content
+    position: relative
+    overflow: visible
+    display: flex
+    background-color: var(--bg-color)
+    transform: scale(0.8)
+    height: 45rem
+    border-radius: .5rem 
+    opacity: 0
+    transition: all 150ms ease
+
+.content_active
+    opacity: 1
+    transform: scale(1) 
+
+.icons
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    background: rgba(114, 114, 114, 0.486)
+    padding: .15rem 0rem
+    border-radius: .2rem
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1)
+    color: white

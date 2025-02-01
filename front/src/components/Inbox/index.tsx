@@ -1,13 +1,17 @@
-import ThemeToggle from "../ui/Buttons/theme"
-import classes from "./Settings.module.sass"
+import classes from "./Inbox.module.sass"
 
 import { createSignal, onMount } from "solid-js"
 
-interface ModalSettingsProps {
-	onClose: () => void
+import MenuInbox from "./MenuInbox"
+import InboxComponent from "./InboxComponent"
+
+import MessangerInbox from "./Messanger"
+
+interface InboxProps {
+	onInboxClose: () => void
 }
 
-export default function ModalSettings(props: ModalSettingsProps) {
+export default function Inbox(props: InboxProps) {
 	const [isActive, setIsActive] = createSignal(false)
 
 	onMount(() => {
@@ -16,14 +20,14 @@ export default function ModalSettings(props: ModalSettingsProps) {
 
 	const handleClose = () => {
 		setIsActive(false)
-		setTimeout(() => props.onClose(), 300)
+		setTimeout(() => props.onInboxClose(), 300)
 	}
 
 	return (
 		<div
 			classList={{
 				[classes.container]: true,
-				[classes.container_active]: isActive(),
+				[classes.containerOpen]: isActive(),
 			}}
 			onClick={handleClose}
 		>
@@ -34,9 +38,9 @@ export default function ModalSettings(props: ModalSettingsProps) {
 				}}
 				onClick={(e) => e.stopPropagation()}
 			>
-				<span class={classes.items}>Settings</span>
-				<p class={classes.items}>Here you can configure your settings.</p>
-				<ThemeToggle/>
+				<MenuInbox />
+				<InboxComponent />
+				<MessangerInbox />
 			</div>
 		</div>
 	)

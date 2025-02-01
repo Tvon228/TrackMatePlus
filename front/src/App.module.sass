@@ -2,127 +2,64 @@
 @tailwind components
 @tailwind utilities
 
-@layer base
-  :root
-    --background: 0 0% 100%
-    --foreground: 240 10% 3.9%
+:root
+  --bg-color: #111827
+  --text-color: #f5f5f7e5
+  --secondary-text: #838287
+  --hover-bg: #ffffff0e
+  --button-hover: #f9fafb31
 
-    --muted: 240 4.8% 95.9%
-    --muted-foreground: 240 3.8% 46.1%
+  --bg-input: #09090b
+  --border-btn-input: rgba(245, 245, 247, 0.171)
 
-    --popover: 0 0% 100%
-    --popover-foreground: 240 10% 3.9%
+  --menu-bg: #182132
+  --menu-text: #f1f5f9
 
-    --border: 240 5.9% 90%
-    --input: 240 5.9% 90%
+  --icon-color: #ffffff
 
-    --card: 0 0% 100%
-    --card-foreground: 240 10% 3.9%
+  --toolbar-bg: #020817
+  --border-color: #1e293b
 
-    --primary: 240 5.9% 10%
-    --primary-foreground: 0 0% 98%
+  --bg-color-createAcc: #ffffff0c
+  --bg-color-login-hover: #ffffffc7
 
-    --secondary: 240 4.8% 95.9%
-    --secondary-foreground: 240 5.9% 10%
+  --bg-color-chrome-hover: #ffffff1a
 
-    --accent: 240 4.8% 95.9%
-    --accent-foreground: 240 5.9% 10%
+  --bg-items-hover: #ffffff1a
 
-    --destructive: 0 84.2% 60.2%
-    --destructive-foreground: 0 0% 98%
+[data-theme="light"] 
+  --bg-color: #e8e8e8
+  --text-color: #020817
+  --secondary-text: #272b35c0
+  --hover-bg: #b8b8b863
+  --button-hover: #edf0f3
 
-    --info: 204 94% 94%
-    --info-foreground: 199 89% 48%
+  --menu-bg: #f8f8f8
+  --menu-text: #020817
 
-    --success: 149 80% 90%
-    --success-foreground: 160 84% 39%
+  --bg-input: #f8f9faf5
+  --border-btn-input: rgba(92, 92, 92, 0.233)
 
-    --warning: 48 96% 89%
-    --warning-foreground: 25 95% 53%
+  --icon-color: #020817
 
-    --error: 0 93% 94%
-    --error-foreground: 0 84% 60%
+  --toolbar-bg: #f8f9fa
+  --border-color: #a3a3a3
 
-    --ring: 240 5.9% 10%
+  --bg-color-createAcc: #000000d8
+  --bg-color-login-hover: #f5f5f7da
 
-    --radius: 0.5rem
+  --bg-color-chrome-hover: #000000d8
+  
+  --bg-items-hover: #a1a1a133
 
-  .dark,
-  [data-kb-theme="dark"] {
-    --background: 240 10% 3.9%
-    --foreground: 0 0% 98%
-
-    --muted: 240 3.7% 15.9%
-    --muted-foreground: 240 5% 64.9%
-
-    --accent: 240 3.7% 15.9%
-    --accent-foreground: 0 0% 98%
-
-    --popover: 240 10% 3.9%
-    --popover-foreground: 0 0% 98%
-
-    --border: 240 3.7% 15.9%
-    --input: 240 3.7% 15.9%
-
-    --card: 240 10% 3.9%
-    --card-foreground: 0 0% 98%
-
-    --primary: 0 0% 98%
-    --primary-foreground: 240 5.9% 10%
-
-    --secondary: 240 3.7% 15.9%
-    --secondary-foreground: 0 0% 98%
-
-    --destructive: 0 62.8% 30.6%
-    --destructive-foreground: 0 0% 98%
-
-    --info: 204 94% 94%
-    --info-foreground: 199 89% 48%
-
-    --success: 149 80% 90%
-    --success-foreground: 160 84% 39%
-
-    --warning: 48 96% 89%
-    --warning-foreground: 25 95% 53%
-
-    --error: 0 93% 94%
-    --error-foreground: 0 84% 60%
-
-    --ring: 240 4.9% 83.9%
-
-    --radius: 0.5rem
-
-@layer base
-  *
-    @apply border-border
-
-  body
-    @apply bg-background text-foreground
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
-
-@layer utilities
-  .step
-    counter-increment: step
-
-  &:before
-    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background
-    @apply ml-[-50px] mt-[-4px]
-      content: counter(step)
-
-@media (max-width: 640px)
-  .container
-    @apply px-4
-
-::-webkit-scrollbar
-  width: 16px
-
-::-webkit-scrollbar-thumb
-  border-radius: 9999px
-  border: 4px solid transparent
-  background-clip: content-box
-  @apply bg-accent
-
-::-webkit-scrollbar-corner
-  display: none
+body
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"
+  box-sizing: border-box
+  margin: 0
+  height: 100vh
+  overflow: hidden
+  user-select: none
+  position: relative
+  background: var(--bg-color)
+  color: var(--text-color)
+  transition: all 0.3s

@@ -29,7 +29,7 @@ export default function ToolBar({
 					onClick={() => onCommand(btn.command)}
 					title={btn.tooltip}
 				>
-					<btn.icons size={16} color="#ffffff"/>
+					<btn.icons size={16} color="var(--icon-color)"/>
 				</button>
 			))}
 		</div>

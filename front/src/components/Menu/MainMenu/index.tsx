@@ -16,7 +16,7 @@ export default function MainMenu(props: MainMenuProps) {
 	return (
 		<div class={classes.header}>
 			<button class={classes.btnAccount}>
-				<User size={20} style={{ color: "#f1f5f9" }} />
+				<User size={20} style={{ color: "var(--icon-color)" }} />
 				Your account
 			</button>
 			<div class={classes.btnMain}>
