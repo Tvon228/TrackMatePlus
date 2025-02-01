@@ -1,12 +1,22 @@
-version: '3'
+version: "3.8"
 
 services:
-  web:
-    build: .
-    ports:
-      - "80:80"
-    volumes:
-      - ./frontend/build:/usr/share/nginx/html
-    environment:
-      - NGINX_HOST=trackmateplus.ru
-      - NGINX_PORT=80
+    nginx:
+        image: nginx:alpine
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/certs:/etc/nginx/certs
+        depends_on:
+            - front
+            - back
+
+    front:
+        build: ./front
+
+    back:
+        build: ./back
+        environment:
+            - PORT=3000
